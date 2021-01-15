@@ -34,10 +34,10 @@ public class MService extends MUniqueObject {
     private Map<String, MSvcInterface> serviceInterfaceMap;
     private MSvcDepDesc mSvcDepDesc;
 
-    /*
+    /**
      * DO NOT change the code above. Unless in reconstruction
      */
-    private MServiceExtension svcExtension;
+    private MServiceExtension svcExtension = new MServiceExtension();
 
     /**
      * Only used when there is only ONE resource constraint level for the service
