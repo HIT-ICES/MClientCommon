@@ -1,6 +1,9 @@
 package com.hitices.common.service;
 
 import com.hitices.common.base.MResource;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,9 @@ import java.util.List;
  * @date 2020/9/21
  **/
 
+@Getter
+@Setter
+@ToString
 public class MServiceExtension {
 
     /**
