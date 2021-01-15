@@ -47,15 +47,15 @@ public class MService extends MUniqueObject {
     /**
      * Only used when there is only ONE resource constraint level for the service
      */
-    public MResource getSingleResource() {
+    public MResource singleResource() {
         return svcExtension.getResourceConstraints().get(0);
     }
 
     /**
      * Only used when there is only ONE resource constraint level for the service
      */
-    public double getSingleAbility() {
-        return svcExtension.getSvcAbility(this.getSingleResource());
+    public double singleAbility() {
+        return svcExtension.getSvcAbility(this.singleResource());
     }
 
     /**
