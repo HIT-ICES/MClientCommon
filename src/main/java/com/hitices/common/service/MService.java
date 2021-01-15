@@ -17,50 +17,26 @@ import java.util.stream.Collectors;
  * @version 0.1
  * @date 2019/12/13
  */
-
+@Getter
+@Setter
 @ToString
 public class MService extends MUniqueObject {
-    /**
+    /*
      * The service name is not the same as the serviceId.
      * For two services, they can have the same service name with different version.
      */
-    @Getter
-    @Setter
     private String serviceName;
-
-    @Getter
-    @Setter
     private MSvcVersion serviceVersion;
-
-    @Getter
-    @Setter
     private String gitUrl;
-
-    @Getter
-    @Setter
     private int port;
-
-    @Getter
-    @Setter
     private String imageUrl;
-
-    @Getter
-    @Setter
     private Integer maxPlotNum;
-
-    @Getter
-    @Setter
     private Map<String, MSvcInterface> serviceInterfaceMap;
-
-    @Getter
-    @Setter
     private MSvcDepDesc mSvcDepDesc;
 
     /**
      * DO NOT change the code above. Unless in reconstruction
      */
-    @Getter
-    @Setter
     private MServiceExtension svcExtension;
 
     public MService() {
@@ -115,7 +91,7 @@ public class MService extends MUniqueObject {
         return Optional.empty();
     }
 
-    public List<BaseSvcDependency> getAllDep() {
+    public List<BaseSvcDependency> allDep() {
         List<BaseSvcDependency> resultList = new ArrayList<>();
         for (String depName : this.mSvcDepDesc.getDependencyMaps().keySet()) {
             resultList.addAll(this.mSvcDepDesc.getDependencyMaps().get(depName).values());
