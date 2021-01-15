@@ -37,7 +37,12 @@ public class MService extends MUniqueObject {
     /**
      * DO NOT change the code above. Unless in reconstruction
      */
-    private MServiceExtension svcExtension = new MServiceExtension();
+    private MServiceExtension svcExtension;
+
+    public MService() {
+        this.svcExtension = new MServiceExtension();
+        this.serviceInterfaceMap = new HashMap<>();
+    }
 
     /**
      * Only used when there is only ONE resource constraint level for the service
