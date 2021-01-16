@@ -149,7 +149,6 @@ public class MUrlUtils {
         } catch (URISyntaxException e) {
             logger.info(e);
         }
-        logger.info(uri);
         return uri;
     }
 

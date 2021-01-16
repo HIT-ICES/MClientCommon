@@ -18,7 +18,7 @@ public class MFuncDescription {
 
     private MFunc func;
 
-    /*
+    /**
      * We can change the sla definition in the future
      */
     private MSla sla;

@@ -25,6 +25,7 @@ public class MRequestUtils {
     }
 
     public static <T> T sendRequest(URI uri, @Nullable Object paramObj, Class<T> returnClass, RequestMethod method, Map<String, List<String>> customHeaders) {
+        logger.info(String.format("Sending request to %s...", uri.toString()));
         T result = null;
         ResponseEntity<T> entity = null;
         try {
