@@ -136,6 +136,7 @@ public class MConfig {
     public final static String MRUNENV_DEPLOY_URL = "/deploy";
     public final static String MRUNENV_DELETE_URL = "/delete";
     public static final String MRUNENV_INSTANCE_STATUS_CHANGED_URL = "/context/instance/statusChanged";
+    public static final String MRUNENV_UPDATE_GROUP_NODE_LIST_URL = "/context/update/groupNodeList";
 
     private static MConfig ourInstance = new MConfig();
 
