@@ -135,6 +135,7 @@ public class MConfig {
     public static final String MRUNENV_PODS_URL = "/context/run/podList";
     public final static String MRUNENV_DEPLOY_URL = "/deploy";
     public final static String MRUNENV_DELETE_URL = "/delete";
+    public static final String MRUNENV_INSTANCE_STATUS_CHANGED_URL = "/context/instance/statusChanged";
 
     private static MConfig ourInstance = new MConfig();
 
