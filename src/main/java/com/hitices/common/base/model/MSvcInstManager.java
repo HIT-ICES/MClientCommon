@@ -10,6 +10,16 @@ import java.util.stream.Collectors;
 @ToString
 public class MSvcInstManager extends MUniqueObjectManager<MSvcInstance> {
 
+
+    public Optional<MSvcInstance> getByIp(String ip) {
+        for (MSvcInstance instance : this.objectMap.values()) {
+            if (instance.getIp().equals(ip)) {
+                return Optional.of(instance);
+            }
+        }
+        return Optional.empty();
+    }
+
     public Map<String, List<MSvcInstance>> getInstancesGroupByClusterId() {
         Map<String, List<MSvcInstance>> resultMap = new HashMap<>();
         for (MSvcInstance instance : this.objectMap.values()) {
