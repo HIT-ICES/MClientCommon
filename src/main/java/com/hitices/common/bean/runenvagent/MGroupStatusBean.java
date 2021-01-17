@@ -22,4 +22,5 @@ public class MGroupStatusBean {
     private String groupId;
     private MEndPoint groupEntry;
     private Set<String> groupInstIps;
+    private Set<String> groupNodeIps;
 }
