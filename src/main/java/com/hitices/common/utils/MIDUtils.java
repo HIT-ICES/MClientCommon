@@ -33,8 +33,8 @@ public class MIDUtils {
         return String.format("%s_%s_%s_%s", groupName, jobType.toString(), MIDUtils.lastJobIdTimeMills, MIDUtils.jobCountEachMill);
     }
 
-    public static String uniqueInterfaceId(String serviceName, String interfaceName) {
-        return String.format("%s_%s_%s", serviceName, interfaceName, RandomStringUtils.randomAlphanumeric(6));
+    public static String uniqueInterfaceId(String serviceId, String interfacePatternUrl) {
+        return String.format("%s_%s", serviceId, interfacePatternUrl.replaceAll("/", ""));
     }
 
     public static synchronized String uniqueInstanceId(String serviceName, String versionStr, String groupName) {

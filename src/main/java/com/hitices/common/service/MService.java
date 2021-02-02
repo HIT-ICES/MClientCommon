@@ -31,6 +31,10 @@ public class MService extends MUniqueObject {
     private int port;
     private String imageUrl;
     private Integer maxPlotNum;
+
+    /*
+     * Map [ pattern url, MSvcInterface ]
+     */
     private Map<String, MSvcInterface> serviceInterfaceMap;
     private MSvcDepDesc mSvcDepDesc;
 
@@ -74,12 +78,7 @@ public class MService extends MUniqueObject {
     }
 
     public Optional<MSvcInterface> getInterfaceByPatternUrl(String patternUrl) {
-        for (MSvcInterface svcInterface : this.serviceInterfaceMap.values()) {
-            if (svcInterface.getPatternUrl().equals(patternUrl)) {
-                return Optional.of(svcInterface);
-            }
-        }
-        return Optional.empty();
+        return Optional.of(this.serviceInterfaceMap.get(patternUrl));
     }
 
     public Optional<BaseSvcDependency> getDepByHashCode(int hashcode) {
@@ -169,7 +168,12 @@ public class MService extends MUniqueObject {
     }
 
     public MSvcInterface getInterfaceById(String interfaceId) {
-        return this.getServiceInterfaceMap().get(interfaceId);
+        for (MSvcInterface svcInterface : this.serviceInterfaceMap.values()) {
+            if (svcInterface.getId().equals(interfaceId)) {
+                return svcInterface;
+            }
+        }
+        return null;
     }
 
     public void updateDeps(List<BaseSvcDependency> deps) {
